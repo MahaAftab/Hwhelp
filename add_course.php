@@ -27,9 +27,6 @@
           <ul class="navbar-nav mr-3">
             <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg
 									collapse-btn"> <i data-feather="align-justify"></i></a></li>
-            <li><a href="#" class="nav-link nav-link-lg fullscreen-btn">
-                <i data-feather="maximize"></i>
-              </a></li>
             <li>
               <form class="form-inline mr-auto">
                 <div class="search-element">
@@ -43,7 +40,7 @@
           </ul>
         </div>
         <ul class="navbar-nav navbar-right">
- 
+         
           </li>
           <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
               class="nav-link notification-toggle nav-link-lg"><i data-feather="bell" class="bell"></i>
@@ -100,14 +97,14 @@
               <!-- The admin logged in will have his name displayed here -->
               <div class="dropdown-title">Sarah Smith</div>
 
-              <a href="profile.html" class="dropdown-item has-icon"> <i class="far
+              <a href="profile.php" class="dropdown-item has-icon"> <i class="far
 										fa-user"></i> Profile</a>
              
               <a href="#" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>
                 Settings
               </a>
               <div class="dropdown-divider"></div>
-              <a href="auth-login.html" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i>
+              <a href="auth-login.php" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i>
                 Logout
               </a>
             </div>
@@ -117,28 +114,28 @@
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html"><span class="logo-name">Hwhelp</span></a>
+            <a href="index.php"><span class="logo-name">Hwhelp</span></a>
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header"></li>
             <li class="dropdown">
-              <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+              <a href="index.php" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
             </li>
-            <li><a class="nav-link" href="add_uni.html"><i class="fa fa-university small"></i><span>Add University</span></a></li>
-            <li><a class="nav-link" href="add_course.html"><i data-feather="folder"></i><span>Add Courses</span></a></li>
-            <!-- <li><a class="nav-link" href="blank.html"><i data-feather="file"></i><span>Add Material</span></a></li> -->
+            <li><a class="nav-link" href="add_uni.php"><i class="fa fa-university small"></i><span>Add University</span></a></li>
+            <li class="active"><a class="nav-link" href="add_course.php"><i data-feather="folder"></i><span>Add Courses</span></a></li>
+            <!-- <li><a class="nav-link" href="blank.php"><i data-feather="file"></i><span>Add Material</span></a></li> -->
 
 
            <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="package"></i><span>Add Material</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="add_hw.html">
+                <li><a class="nav-link" href="add_hw.php">
                   <i data-feather="book-open"></i>Add Homework</a></li>
-                <li class="active"><a class="nav-link" href="Add_lectures.html"><i data-feather="file-minus"></i></i>Add Lectures</a></li>
-                <li><a class="nav-link" href="add_video.html"><i data-feather="video"></i>Add Videos</a></li>
-                <li><a class="nav-link" href="add_quiz.html"><i data-feather="book"></i>Add Quiz</a></li>
-                <li><a class="nav-link" href="add_past_paper.html"><i data-feather="clipboard"></i>Add Past Exam papers</a></li>
+                <li><a class="nav-link" href="Add_lectures.php"><i data-feather="file-minus"></i></i>Add Lectures</a></li>
+                <li><a class="nav-link" href="add_video.php"><i data-feather="video"></i>Add Videos</a></li>
+                <li><a class="nav-link" href="add_quiz.php"><i data-feather="book"></i>Add Quiz</a></li>
+                <li><a class="nav-link" href="add_past_paper.php"><i data-feather="clipboard"></i>Add Past Exam papers</a></li>
 
 
                 
@@ -153,15 +150,14 @@
           </ul>
         </aside>
       </div>
-       <!-- Main Content -->
-       <!--   `id` int(11) NOT NULL,
-  `courseid` varchar(255) NOT NULL,
-  `UniversityID` varchar(255) NOT NULL,
-  `lecdimg` varchar(255) NOT NULL,
-  `lecId` varchar(255) NOT NULL,
-  `lecdocuments` varchar(255) NOT NULL,
-  `lectittle` varchar(255) NOT NULL,
-  `lecdescription` varchar(255) NOT NULL -->
+      <!-- MAIN CONTENT -->
+      <!-- CREATE TABLE `courses` (
+  `courseid` int(255) NOT NULL,
+  `UniversityID` int(255) NOT NULL,
+  `coursename` varchar(555) NOT NULL,
+  `universityname` varchar(255) DEFAULT NULL,
+  `id` varchar(255) NOT NULL,
+  `HomeworkId` varchar(255) NOT NULL -->
   <div class="main-content">
     <section class="section">
       <div class="section-body">
@@ -170,41 +166,38 @@
             <div class="card">
               <form>
                 <div class="card-header">
-                  <h4>Add Lectures</h4>
+                  <h4>Add Courses</h4>
                 </div>
                 <div class="card-body">
                     <div class="form-group">
                         <label>Id</label>
-                        <input type="number" class="form-control">
+                        <input type="number" class="form-control" required="">
                       </div>
                     <div class="form-group">
                         <label>Course Id</label>
-                        <input type="text" class="form-control" required="">
+                        <input type="text" class="form-control">
                       </div>
                   <div class="form-group">
                     <label>University Id</label>
                     <input type="text" class="form-control" required="">
                   </div>
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label>Upload Image</label>
-                    <input type="filr" class="form-control" required="">
-                  </div>
+                    <input type="image" class="form-control" required="">
+                  </div> -->
                   <div class="form-group">
-                    <label>Lecture Id</label>
+                    <label>Course Name</label>
                     <input type="text" class="form-control" required="">
                   </div>
                   <div class="form-group">
-                    <label>Lecture Title</label>
+                    <label>University Name</label>
                     <input type="text" class="form-control" required="">
                   </div>
                   <div class="form-group">
-                    <label>Lecture Description</label>
+                    <label>Homework Id</label>
                     <input type="text" class="form-control" required="">
                   </div>
-                  <div class="form-group">
-                    <label>Upload Document</label>
-                    <input type="file" class="form-control" required="">
-                  </div>
+               
                   
                   
                   <!-- 
@@ -318,7 +311,7 @@
   </div>
   <footer class="main-footer">
     <div class="footer-left">
-      <a href="http://Hwhelp.me">HWHELP</a></a>
+      <a href="http://Hwhelp.me">HwHelp</a></a>
     </div>
     <div class="footer-right">
     </div>

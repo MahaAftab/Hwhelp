@@ -2,6 +2,7 @@
 <html lang="en">
 
 
+<!-- avatar.php  21 Nov 2019 03:54:26 GMT -->
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
@@ -157,15 +158,15 @@
                 class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
             <div class="dropdown-menu dropdown-menu-right pullDown">
               <div class="dropdown-title">Hello Sarah Smith</div>
-              <a href="profile.html" class="dropdown-item has-icon"> <i class="far
+              <a href="profile.php" class="dropdown-item has-icon"> <i class="far
 										fa-user"></i> Profile
-              </a> <a href="timeline.html" class="dropdown-item has-icon"> <i class="fas fa-bolt"></i>
+              </a> <a href="timeline.php" class="dropdown-item has-icon"> <i class="fas fa-bolt"></i>
                 Activities
               </a> <a href="#" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>
                 Settings
               </a>
               <div class="dropdown-divider"></div>
-              <a href="auth-login.html" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i>
+              <a href="auth-login.php" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i>
                 Logout
               </a>
             </div>
@@ -175,14 +176,14 @@
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html"> <img alt="image" src="assets/img/logo.png" class="header-logo" /> <span
+            <a href="index.php"> <img alt="image" src="assets/img/logo.png" class="header-logo" /> <span
                 class="logo-name">Otika</span>
             </a>
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Main</li>
             <li class="dropdown">
-              <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+              <a href="index.php" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
             </li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
@@ -192,11 +193,11 @@
                 <li><a class="nav-link" href="widget-data.html">Data Widgets</a></li>
               </ul>
             </li>
-            <li class="dropdown active">
+            <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="command"></i><span>Apps</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="chat.html">Chat</a></li>
-                <li class="active"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                <li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
                 <li><a class="nav-link" href="blog.html">Blog</a></li>
                 <li><a class="nav-link" href="calendar.html">Calendar</a></li>
               </ul>
@@ -232,11 +233,11 @@
                 <li><a class="nav-link" href="typography.html">Typography</a></li>
               </ul>
             </li>
-            <li class="dropdown">
+            <li class="dropdown active">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="shopping-bag"></i><span>Advanced</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="avatar.html">Avatar</a></li>
+                <li class="active"><a class="nav-link" href="avatar.html">Avatar</a></li>
                 <li><a class="nav-link" href="card.html">Card</a></li>
                 <li><a class="nav-link" href="modal.html">Modal</a></li>
                 <li><a class="nav-link" href="sweet-alert.html">Sweet Alert</a></li>
@@ -386,137 +387,99 @@
         <section class="section">
           <div class="section-body">
             <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="col-md-6 col-sm-6 col-12">
                 <div class="card">
+                  <div class="card-header">
+                    <h4>Avatar</h4>
+                  </div>
                   <div class="card-body">
-                    <div class="bootstrap snippet">
-                      <section id="portfolio" class="gray-bg padding-top-bottom">
-                        <!--==== Portfolio Filters ====-->
-                        <div class="categories">
-                          <ul>
-                            <li class="active">
-                              <a href="#" data-filter="*">All Categories</a>
-                            </li>
-                            <li>
-                              <a href="#" data-filter=".web-design">Web Design</a>
-                            </li>
-                            <li>
-                              <a href="#" data-filter=".apps">Apps</a>
-                            </li>
-                            <li>
-                              <a href="#" data-filter=".psd">PSD</a>
-                            </li>
-                          </ul>
-                        </div>
-                        <!-- ======= Portfolio items ===-->
-                        <div class="projects-container scrollimation in">
-                          <div class="row">
-                            <article class="col-md-4 col-sm-6 portfolio-item web-design apps psd">
-                              <div class="portfolio-thumb in">
-                                <a href="#" class="main-link">
-                                  <img class="img-responsive img-center" src="assets/img/posts/post4.png" alt="">
-                                  <span class="project-title">Title 1</span>
-                                  <span class="overlay-mask"></span>
-                                </a>
-                                <a class="enlarge cboxElement" href="#" title="Bills Project"><i
-                                    class="fa fa-expand fa-fw"></i></a>
-                                <a class="link" href="#"><i class="fa fa-eye fa-fw"></i></a>
-                              </div>
-                            </article>
-                            <article class="col-md-4 col-sm-6 portfolio-item apps">
-                              <div class="portfolio-thumb in">
-                                <a href="#" class="main-link">
-                                  <img class="img-responsive img-center" src="assets/img/posts/post5.png" alt="">
-                                  <span class="project-title">Title 2</span>
-                                  <span class="overlay-mask"></span>
-                                </a>
-                                <a class="link centered" href="#"><i class="fa fa-eye fa-fw"></i></a>
-                              </div>
-                            </article>
-                            <article class="col-md-4 col-sm-6 portfolio-item web-design psd">
-                              <div class="portfolio-thumb in">
-                                <a href="#" class="main-link">
-                                  <img class="img-responsive img-center" src="assets/img/posts/post6.png" alt="">
-                                  <span class="project-title">Title 3</span>
-                                  <span class="overlay-mask"></span>
-                                </a>
-                                <a class="enlarge centered cboxElement" href="#" title="Get Colored"><i
-                                    class="fa fa-expand fa-fw"></i></a>
-                              </div>
-                            </article>
-                            <article class="col-md-4 col-sm-6 portfolio-item apps">
-                              <div class="portfolio-thumb in">
-                                <a href="#" class="main-link">
-                                  <img class="img-responsive img-center" src="assets/img/posts/post7.png" alt="">
-                                  <span class="project-title">Title 4</span>
-                                  <span class="overlay-mask"></span>
-                                </a>
-                                <a class="enlarge cboxElement" href="#" title="Holiday Selector"><i
-                                    class="fa fa-expand fa-fw"></i></a>
-                                <a class="link" href="#"><i class="fa fa-eye fa-fw"></i></a>
-                              </div>
-                            </article>
-                            <article class="col-md-4 col-sm-6 portfolio-item web-design psd">
-                              <div class="portfolio-thumb in">
-                                <a href="#" class="main-link">
-                                  <img class="img-responsive img-center" src="assets/img/posts/post8.png" alt="">
-                                  <span class="project-title">Title 5</span>
-                                  <span class="overlay-mask"></span>
-                                </a>
-                                <a class="enlarge cboxElement" href="#" title="Scavenger Hunt"><i
-                                    class="fa fa-expand fa-fw"></i></a>
-                                <a class="link" href="#"><i class="fa fa-eye fa-fw"></i></a>
-                              </div>
-                            </article>
-                            <article class="col-md-4 col-sm-6 portfolio-item web-design apps">
-                              <div class="portfolio-thumb in">
-                                <a href="#" class="main-link">
-                                  <img class="img-responsive img-center" src="assets/img/posts/post9.png" alt="">
-                                  <span class="project-title">Title 6</span>
-                                  <span class="overlay-mask"></span>
-                                </a>
-                                <a class="enlarge cboxElement" href="#" title="Sonor"><i
-                                    class="fa fa-expand fa-fw"></i></a>
-                                <a class="link" href="#"><i class="fa fa-eye fa-fw"></i></a>
-                              </div>
-                            </article>
-                            <article class="col-md-4 col-sm-6 portfolio-item web-design apps psd">
-                              <div class="portfolio-thumb in">
-                                <a href="#" class="main-link">
-                                  <img class="img-responsive img-center" src="assets/img/posts/post11.png" alt="">
-                                  <span class="project-title">Title 7</span>
-                                  <span class="overlay-mask"></span>
-                                </a>
-                                <a class="enlarge cboxElement" href="#" title="Bills Project"><i
-                                    class="fa fa-expand fa-fw"></i></a>
-                                <a class="link" href="#"><i class="fa fa-eye fa-fw"></i></a>
-                              </div>
-                            </article>
-                            <article class="col-md-4 col-sm-6 portfolio-item apps">
-                              <div class="portfolio-thumb in">
-                                <a href="#" class="main-link">
-                                  <img class="img-responsive img-center" src="assets/img/posts/post12.png" alt="">
-                                  <span class="project-title">Title 8</span>
-                                  <span class="overlay-mask"></span>
-                                </a>
-                                <a class="link centered" href="#"><i class="fa fa-eye fa-fw"></i></a>
-                              </div>
-                            </article>
-                            <article class="col-md-4 col-sm-6 portfolio-item web-design psd">
-                              <div class="portfolio-thumb in">
-                                <a href="#" class="main-link">
-                                  <img class="img-responsive img-center" src="assets/img/posts/post13.png" alt="">
-                                  <span class="project-title">Title 9</span>
-                                  <span class="overlay-mask"></span>
-                                </a>
-                                <a class="enlarge centered cboxElement" href="#" title="Get Colored"><i
-                                    class="fa fa-expand fa-fw"></i></a>
-                              </div>
-                            </article>
-                          </div>
-                        </div>
-                      </section>
-                    </div>
+                    <figure class="avatar mr-2 avatar-xl">
+                      <img src="assets/img/users/user-1.png" alt="...">
+                    </figure>
+                    <figure class="avatar mr-2 avatar-lg">
+                      <img src="assets/img/users/user-2.png" alt="...">
+                    </figure>
+                    <figure class="avatar mr-2">
+                      <img src="assets/img/users/user-5.png" alt="...">
+                    </figure>
+                    <figure class="avatar mr-2 avatar-sm">
+                      <img src="assets/img/users/user-3.png" alt="...">
+                    </figure>
+                    <figure class="avatar mr-2 avatar-xs">
+                      <img src="assets/img/users/user-4.png" alt="...">
+                    </figure>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Avatar Icon</h4>
+                  </div>
+                  <div class="card-body">
+                    <figure class="avatar mr-2 avatar-xl">
+                      <img src="assets/img/users/user-1.png" alt="...">
+                      <img src="assets/img/users/user-5.png" class="avatar-icon" alt="...">
+                    </figure>
+                    <figure class="avatar mr-2 avatar-lg">
+                      <img src="assets/img/users/user-2.png" alt="...">
+                      <img src="assets/img/users/user-4.png" class="avatar-icon" alt="...">
+                    </figure>
+                    <figure class="avatar mr-2">
+                      <img src="assets/img/users/user-3.png" alt="...">
+                      <img src="assets/img/users/user-3.png" class="avatar-icon" alt="...">
+                    </figure>
+                    <figure class="avatar mr-2 avatar-sm">
+                      <img src="assets/img/users/user-4.png" alt="...">
+                      <img src="assets/img/users/user-2.png" class="avatar-icon" alt="...">
+                    </figure>
+                    <figure class="avatar mr-2 avatar-xs">
+                      <img src="assets/img/users/user-5.png" alt="...">
+                      <img src="assets/img/users/user-1.png" class="avatar-icon" alt="...">
+                    </figure>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Avatar Presence</h4>
+                  </div>
+                  <div class="card-body">
+                    <figure class="avatar mr-2 avatar-xl">
+                      <img src="assets/img/users/user-1.png" alt="...">
+                      <i class="avatar-presence online"></i>
+                    </figure>
+                    <figure class="avatar mr-2 avatar-lg">
+                      <img src="assets/img/users/user-2.png" alt="...">
+                      <i class="avatar-presence busy"></i>
+                    </figure>
+                    <figure class="avatar mr-2">
+                      <img src="assets/img/users/user-3.png" alt="...">
+                      <i class="avatar-presence away"></i>
+                    </figure>
+                    <figure class="avatar mr-2 avatar-sm">
+                      <img src="assets/img/users/user-4.png" alt="...">
+                      <i class="avatar-presence offline"></i>
+                    </figure>
+                    <figure class="avatar mr-2 avatar-xs">
+                      <img src="assets/img/users/user-5.png" alt="...">
+                      <i class="avatar-presence online"></i>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Avatar Initial</h4>
+                  </div>
+                  <div class="card-body">
+                    <figure class="avatar mr-2 avatar-xl" data-initial="UM"></figure>
+                    <figure class="avatar mr-2 avatar-lg bg-danger text-white" data-initial="UM"></figure>
+                    <figure class="avatar mr-2 bg-warning text-white" data-initial="UM"></figure>
+                    <figure class="avatar mr-2 avatar-sm bg-success text-white" data-initial="UM"></figure>
+                    <figure class="avatar mr-2 avatar-xs bg-info text-white" data-initial="UM"></figure>
                   </div>
                 </div>
               </div>
@@ -628,7 +591,6 @@
   <script src="assets/js/app.min.js"></script>
   <!-- JS Libraies -->
   <!-- Page Specific JS File -->
-  <script src="assets/js/page/portfolio.js"></script>
   <!-- Template JS File -->
   <script src="assets/js/scripts.js"></script>
   <!-- Custom JS File -->
@@ -636,5 +598,5 @@
 </body>
 
 
-<!-- portfolio.html  21 Nov 2019 03:50:31 GMT -->
+<!-- avatar.html  21 Nov 2019 03:54:26 GMT -->
 </html>
