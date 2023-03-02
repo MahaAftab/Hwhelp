@@ -150,173 +150,155 @@
           </ul>
         </aside>
       </div>
-      <!-- Main Content -->
-      <!--  `id` int(255) NOT NULL,
-  `courseid` varchar(255) NOT NULL,
-  `UniversityID` varchar(255) NOT NULL,
-  `Homeworkdimg` varchar(255) NOT NULL,
-  `HomeworkId` varchar(255) NOT NULL,
-  `Homeworkdocuments` varchar(255) NOT NULL,
-  `hwtittle` varchar(255) DEFAULT NULL,
-  `homeworkdescription` varchar(225) DEFAULT NULL,
-  `vedioid` varchar(255) DEFAULT NULL -->
-      <div class="main-content">
-        <section class="section">
-          <div class="section-body">
-            <div class="row">
-              <div class="col-12 col-md-10 col-lg-12">
-                <div class="card">
-                  <form>
-                    <div class="card-header">
-                      <h4>Add Homework</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label>Id</label>
-                            <input type="number" class="form-control" required="">
-                          </div>
-                        <div class="form-group">
-                            <label>Course Id</label>
-                            <input type="text" class="form-control">
-                          </div>
-                      <div class="form-group">
-                        <label>University Id</label>
-                        <input type="text" class="form-control" required="">
-                      </div>
-                      <div class="form-group">
-                        <label>Homework Id</label>
-                        <input type="text" class="form-control" required="">
-                      </div>
-                      <div class="form-group">
-                        <label>Homework Title</label>
-                        <input type="text" class="form-control" required="">
-                      </div>
+     <!-- Mian content  -->
+        <div class="main-content">
+          <section class="section">
+            <div class="section-body">
+              <div class="row">
+                
+                <div class="col-12 col-md-10 col-lg-12">
+                  <div class="text-right" style="padding-bottom: 20px;">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Homework</button>
+                  </div>
+                 <div class="card">
+                
+      
+                  <div class="card-header" style="text-align: center;">
+                    <h4 style="text-align: center;">Homework</h4>
+                  </div>
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <!-- <th scope="col">#</th> -->
+                        <th scope="col">Id</th>
+                        <th scope="col">Course Id</th>
+                        <th scope="col">University Id</th>
+                        <th scope="col">Homework Image</th>
+                        <th scope="col">Homework Id</th>
+                        <th scope="col">Homework Title</th>
+                        <th scope="col">Homework Documents</th>
+                        <th scope="col">Homework Description</th>
+                        <th scope="col">Video Id</th>
+                        <th scope="col">Edit</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <!-- <th scope="row">1</th> -->
+                        <td>4</td>
+                        <td>11</td>
+                        <td>22</td>
+                        <td>Screenshot (1).png</td>
+                        <td>2600</td>
+                        <td>Homework-2</td>
+                        <td>Hw2.pdf</td>
+                        <td>(Spring_2021_ELEC201_24499_L02) Electric Circuits</td>
+                        <td>2</td>
+                        <td> <button type="button" class="btn btn-success"><i class="fa fa-edit"></i>
+                        </button>
+                          <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i>
+                          </button></td>
+                      </tr>
+                      <tr>
+                        <!-- <th scope="row">1</th> -->
+                        <td>5</td>
+                        <td>11</td>
+                        <td>22</td>
+                        <td>Screenshot (1).png</td>
+                        <td>2601</td>
+                        <td>Homework-3</td>
+                        <td>Hw3.pdf</td>
+                        <td>(Spring_2021_ELEC201_24499_L08) Electric Circuits</td>
+                        <td>2</td>
+                        <td> <button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
+                          <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i>
+                          </button></td>
+                      </tr>
                       
-                      <div class="form-group">
-                        <label>Homework Description</label>
-                        <input type="text" class="form-control" required="">
-                      </div>
-                      <div class="form-group">
-                        <label>Upload Homework Image</label>
-                        <input type="file" class="form-control" required="">
-                      </div>
-                      <div class="form-group">
-                        <label>Upload Homework Documents</label>
-                        <input type="file" class="form-control" required="">
-                      </div>
-                      <div class="form-group">
-                        <label>Vedio Id</label>
-                        <input type="text" class="form-control" required="">
-                      </div>
-                      
-                      
-                      <!-- 
-                      <div class="form-group mb-0">
-                        <label>Message</label>
-                        <textarea class="form-control" required=""></textarea>
-                      </div> -->
-                    </div>
-                    <div class="card-footer text-right">
-                      <button class="btn btn-primary">Add</button>
-                    </div>
-                  </form>
+                    </tbody>
+                  </table>
                 </div>
-               
               </div>
+                  </div>
+                </section>
+      
+                <!-- Modal with form -->
+      
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="formModal"
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="formModal">Add Homework</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="card-body">
+                          <div class="form-group">
+                              <label>Id</label>
+                              <input type="number" class="form-control" required="">
+                            </div>
+                          <div class="form-group">
+                              <label>Course Id</label>
+                              <input type="text" class="form-control">
+                            </div>
+                        <div class="form-group">
+                          <label>University Id</label>
+                          <input type="text" class="form-control" required="">
+                        </div>
+                        <div class="form-group">
+                          <label>Homework Id</label>
+                          <input type="text" class="form-control" required="">
+                        </div>
+                        <div class="form-group">
+                          <label>Homework Title</label>
+                          <input type="text" class="form-control" required="">
+                        </div>
+                        
+                        <div class="form-group">
+                          <label>Homework Description</label>
+                          <input type="text" class="form-control" required="">
+                        </div>
+                        <div class="form-group">
+                          <label>Upload Homework Image</label>
+                          <input type="file" class="form-control" required="">
+                        </div>
+                        <div class="form-group">
+                          <label>Upload Homework Documents</label>
+                          <input type="file" class="form-control" required="">
+                        </div>
+                        <div class="form-group">
+                          <label>Vedio Id</label>
+                          <input type="text" class="form-control" required="">
+                        </div>
+                         
+                        
+                        <!-- 
+                        <div class="form-group mb-0">
+                          <label>Message</label>
+                          <textarea class="form-control" required=""></textarea>
+                        </div> -->
+                    </div>
+                      <div class="text-right">
+                        <button class="btn btn-primary">Add</button>
+                      </div>
+                     
+                    </div>
+                  </div>
+                </div>
+      
+                
               
-            </div>
-          </div>
-        </section>
-        <div class="settingSidebar">
-          <a href="javascript:void(0)" class="settingPanelToggle"> <i class="fa fa-spin fa-cog"></i>
-          </a>
-          <div class="settingSidebar-body ps-container ps-theme-default">
-            <div class=" fade show active">
-              <div class="setting-panel-header">Setting Panel
-              </div>
-              <div class="p-15 border-bottom">
-                <h6 class="font-medium m-b-10">Select Layout</h6>
-                <div class="selectgroup layout-color w-50">
-                  <label class="selectgroup-item">
-                    <input type="radio" name="value" value="1" class="selectgroup-input-radio select-layout" checked>
-                    <span class="selectgroup-button">Light</span>
-                  </label>
-                  <label class="selectgroup-item">
-                    <input type="radio" name="value" value="2" class="selectgroup-input-radio select-layout">
-                    <span class="selectgroup-button">Dark</span>
-                  </label>
-                </div>
-              </div>
-              <div class="p-15 border-bottom">
-                <h6 class="font-medium m-b-10">Sidebar Color</h6>
-                <div class="selectgroup selectgroup-pills sidebar-color">
-                  <label class="selectgroup-item">
-                    <input type="radio" name="icon-input" value="1" class="selectgroup-input select-sidebar">
-                    <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip"
-                      data-original-title="Light Sidebar"><i class="fas fa-sun"></i></span>
-                  </label>
-                  <label class="selectgroup-item">
-                    <input type="radio" name="icon-input" value="2" class="selectgroup-input select-sidebar" checked>
-                    <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip"
-                      data-original-title="Dark Sidebar"><i class="fas fa-moon"></i></span>
-                  </label>
-                </div>
-              </div>
-              <div class="p-15 border-bottom">
-                <h6 class="font-medium m-b-10">Color Theme</h6>
-                <div class="theme-setting-options">
-                  <ul class="choose-theme list-unstyled mb-0">
-                    <li title="white" class="active">
-                      <div class="white"></div>
-                    </li>
-                    <li title="cyan">
-                      <div class="cyan"></div>
-                    </li>
-                    <li title="black">
-                      <div class="black"></div>
-                    </li>
-                    <li title="purple">
-                      <div class="purple"></div>
-                    </li>
-                    <li title="orange">
-                      <div class="orange"></div>
-                    </li>
-                    <li title="green">
-                      <div class="green"></div>
-                    </li>
-                    <li title="red">
-                      <div class="red"></div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="p-15 border-bottom">
-                <div class="theme-setting-options">
-                  <label class="m-b-0">
-                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
-                      id="mini_sidebar_setting">
-                    <span class="custom-switch-indicator"></span>
-                    <span class="control-label p-l-10">Mini Sidebar</span>
-                  </label>
-                </div>
-              </div>
-              <div class="p-15 border-bottom">
-                <div class="theme-setting-options">
-                  <label class="m-b-0">
-                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
-                      id="sticky_header_setting">
-                    <span class="custom-switch-indicator"></span>
-                    <span class="control-label p-l-10">Sticky Header</span>
-                  </label>
-                </div>
-              </div>
-              <div class="mt-4 mb-4 p-3 align-center rt-sidebar-last-ele">
-                <a href="#" class="btn btn-icon icon-left btn-primary btn-restore-theme">
-                  <i class="fas fa-undo"></i> Restore Default
-                </a>
+                
               </div>
             </div>
-          </div>
+          </section>
+      
+                  
+             
+         
         </div>
       </div>
       <footer class="main-footer">
