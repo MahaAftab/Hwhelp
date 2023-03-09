@@ -68,19 +68,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>11</td>
-                  <td>23</td>
-                  <td>quiz_img_1.png</td>
-                  <td>123</td>
-                  <td>Crime and Digital Evidence</td>
-                  <td>What do you understand about digital forensics?</td>
-                  <td>Digital forensics is the process of using scientific methods to collect and analyze data from digital devices in order to reconstruct past events or identify illegal activity.</td>
-                  <td>Translation</td>
-                  <td><button type="button" class="btn btn-success"><i class="fa fa-download"></i></button></td>
-                  <td> <button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
-                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
-                </tr>
+               
                 <tr>
                   <td>22</td>
                   <td>43</td>
@@ -91,8 +79,8 @@
                   <td>Forensics is the process of using scientific methods to collect and analyze data from devices so that they can reconstruct past events or identify illegal activity.</td>
                   <td>Translation</td>
                   <td><button type="button" class="btn btn-success"><i class="fa fa-download"></i></button></td>
-                  <td> <button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
-                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
+                  <td> <button type="button" class="btn btn-success" data-toggle="modal"   data-target="#editmodal"><i class="fa fa-edit"></i></button>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletemodal"><i class="fa fa-trash"></i></button></td>
                 </tr>
                 
               </tbody>
@@ -109,7 +97,7 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="formModal">Add Courses</h5>
+                  <h5 class="modal-title" id="formModal">Add Quiz</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -118,35 +106,39 @@
                   <div class="card-body">
                     <div class="form-group">
                         <label>Id</label>
-                        <input type="number" class="form-control" required="">
+                        <input type="number" class="form-control" required="" id="id">
                           </div>
                     <div class="form-group">
                         <label>Course Id</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" id="course_id">
                     </div>
                       <div class="form-group">
                         <label>University Id</label>
-                        <input type="text" class="form-control" required="">
+                        <input type="text" class="form-control" required="" id="uni_id">
                       </div>
                       <div class="form-group">
                         <label>Upload Quiz Image</label>
-                        <input type="file" class="form-control" required="">
+                        <input type="file" class="form-control" required="" id="upload_quiz_img">
                       </div> 
                       <div class="form-group">
-                        <label>Quiz Title</label>
-                        <input type="text" class="form-control" required="">
-                      </div>
+                        <label>Quiz Id</label>
+                        <input type="file" class="form-control" required="" id="quiz_id">
+                      </div> 
                       <div class="form-group">
                         <label>Quiz Question</label>
-                        <input type="text" class="form-control" required="">
+                        <input type="text" class="form-control" required="" id="quiz_ques">
+                      </div>
+                      <div class="form-group">
+                        <label>Quiz Title</label>
+                        <input type="text" class="form-control" required="" id="quiz_title">
                       </div>
                       <div class="form-group">
                         <label>Quiz Answer</label>
-                        <input type="text" class="form-control" required="">
+                        <input type="text" class="form-control" required="" id="quiz_ans">
                       </div>
                       <div class="form-group">
                         <label>Quiz Translation</label>
-                        <input type="text" class="form-control" required="">
+                        <input type="text" class="form-control" required="" id="quiz_trans">
                       </div>
                       <div class="form-group">
                         <button class="btn btn-primary">Quiz Download</button>
@@ -159,11 +151,103 @@
               </div>
             </div>
           </div>
+        </div>
 
-          
+        
+          <!-- Modal - EDIT COURSE-->
+
+          <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="formModal"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="formModal">Edit Homework</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                    <form >
+                    <div class="form-group">
+                        <label>Id</label>
+                        <input type="number" class="form-control" required="" id="updated_id">
+                          </div>
+                    <div class="form-group">
+                        <label>Course Id</label>
+                        <input type="text" class="form-control" id="course_id">
+                    </div>
+                      <div class="form-group">
+                        <label>University Id</label>
+                        <input type="text" class="form-control" required="" id="uni_id">
+                      </div>
+                      <div class="form-group">
+                        <label>Upload Quiz Image</label>
+                        <input type="file" class="form-control" required="" id="upload_quiz_img">
+                      </div> 
+                      <div class="form-group">
+                        <label>Quiz Id</label>
+                        <input type="file" class="form-control" required="" id="quiz_id">
+                      </div> 
+                      <div class="form-group">
+                        <label>Quiz Question</label>
+                        <input type="text" class="form-control" required="" id="quiz_ques">
+                      </div>
+                      <div class="form-group">
+                        <label>Quiz Title</label>
+                        <input type="text" class="form-control" required="" id="quiz_title">
+                      </div>
+                      <div class="form-group">
+                        <label>Quiz Answer</label>
+                        <input type="text" class="form-control" required="" id="quiz_ans">
+                      </div>
+                      <div class="form-group">
+                        <label>Quiz Translation</label>
+                        <input type="text" class="form-control" required="" id="quiz_trans">
+                      </div>
+                      <div class="form-group">
+                        <button class="btn btn-primary">Quiz Download</button>
+                      </div>
+                    </div>
+                   
+                <button type="submit" class="btn btn-primary m-t-15 waves-effect" value="Submit" id="editbtn" name="editbtn" >Update</button>
+              </div>
+
+                  </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <!-- DELETE MODAL  -->
+            <div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+
+                          <form>
+
+                              <div class="modal-body">
+
+                                  <input type="hidden" name="delete_id" id="delete_id">
+
+                                  <h4> Do you want to Delete this Data?</h4>
+                              </div>
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal"> NO </button>
+                                  <button type="submit" name="deletedata" id ="deletedata" class="btn btn-primary"> Yes </button>
+                              </div>
+                          </form>
+
+                      </div>
+                  </div>
+              </div>
         
           
-        </div>
       </div>
     </section>
 
@@ -192,5 +276,35 @@
         </body>
         
         
-        <!-- forms-validation.php  21 Nov 2019 03:55:16 GMT -->
+
+<script>
+        $(document).ready(function () {
+
+            $('.editbtn').on('click', function () {
+
+                $('#editmodal').modal('show');
+
+            });
+        });
+    </script>
+ <script>
+        $(document).ready(function () {
+
+            $('.deletebtn').on('click', function () {
+
+                $('#deletemodal').modal('show');
+
+                $tr = $(this).closest('tr');
+
+                var data = $tr.children("td").map(function () {
+                    return $(this).text();
+                }).get();
+
+                console.log(data);
+
+                $('#delete_id').val(data[0]);
+
+            });
+        });
+    </script>
       </html>

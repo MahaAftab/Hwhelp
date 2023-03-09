@@ -19,7 +19,7 @@
 
 <body>
   <div class="loader"></div>
-  <?php include 'headers.php';?>
+  <?php include 'header.php';?>
 
       </div>
        <!-- Main Content -->
@@ -55,10 +55,11 @@
                   <th scope="col">Course Id</th>
                   <th scope="col">University Id</th>
                   <th scope="col">Lecture Image</th>
+                  <th scope="col">Lecture Id</th>
                   <th scope="col">Lecture Documents</th>
                   <th scope="col">Lecture Title</th>
-                  <th scope="col">Lecture Description Image</th>
-                  <th scope="col">Edit</th>
+                  <th scope="col">Lecture Description</th>
+                  <th scope="col">Edit/Delete</th>
                 </tr>
               </thead>
               <tbody>
@@ -70,20 +71,11 @@
                   <td>ques_img_1.pdf</td>
                   <td>Evidence</td>
                   <td>Evidence explained</td>
-                  <td> <button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
-                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
+                  <td>Lecture Description</td>
+                  <td> <button type="button" class="btn btn-success" data-toggle="modal"  data-target="#editmodal"><i class="fa fa-edit"></i></button>
+                    <button type="button" class="btn btn-danger" data-toggle="modal"  data-target="#deletemodal"><i class="fa fa-trash"></i></button></td>
                 </tr>
-                <tr>
-                  <td>22</td>
-                  <td>25</td>
-                  <td>33</td>
-                  <td>lec_2.png</td>
-                  <td>ques_img_1.pdf</td>
-                  <td>Suits</td>
-                  <td>Suits explained</td>
-                  <td> <button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
-                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
-                </tr>
+          
                 
               </tbody>
             </table>
@@ -106,41 +98,42 @@
                 </div>
                 <div class="modal-body">
                   <div class="card-body">
+                  <form >
                     <div class="form-group">
                         <label>Id</label>
-                        <input type="number" class="form-control">
+                        <input type="number" class="form-control" id="id" name="id">
                       </div>
                     <div class="form-group">
                         <label>Course Id</label>
-                        <input type="text" class="form-control" required="">
+                        <input type="text" class="form-control" required="" id="course_id">
                       </div>
                   <div class="form-group">
                     <label>University Id</label>
-                    <input type="text" class="form-control" required="">
+                    <input type="text" class="form-control" required="" id="uni_id">
                   </div>
                   <div class="form-group">
-                    <label>Upload Image</label>
-                    <input type="filr" class="form-control" required="">
+                    <label>Upload Lecture Image</label>
+                    <input type="file" class="form-control" required="" id="upload_lec_img">
                   </div>
                   <div class="form-group">
                     <label>Lecture Id</label>
-                    <input type="text" class="form-control" required="">
+                    <input type="text" class="form-control" required="" id="lec_id">
+                  </div>
+                  <div class="form-group">
+                    <label>Upload Lecture Documents</label>
+                    <input type="file" class="form-control" required="" id="upload_doc">
                   </div>
                   <div class="form-group">
                     <label>Lecture Title</label>
-                    <input type="text" class="form-control" required="">
+                    <input type="text" class="form-control" required="" id="lec_title">
                   </div>
                   <div class="form-group">
                     <label>Lecture Description</label>
-                    <input type="text" class="form-control" required="">
+                    <input type="text" class="form-control" required="" id="lec_desc">
                   </div>
-                  <div class="form-group">
-                    <label>Upload Document</label>
-                    <input type="file" class="form-control" required="">
-                  </div>
-                </div>
-                <div class="text-right">
-                  <button class="btn btn-primary">Add</button>
+
+                    <button type="submit" class="btn btn-primary m-t-15 waves-effect" value="Submit" id="addBtn" name="addBtn" >Add</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -149,6 +142,93 @@
           
         
           
+        </div>
+          <!-- Modal - EDIT COURSE-->
+
+          <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="formModal"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="formModal">Edit Homework</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                    <form >
+                    <div class="form-group">
+                        <label>Id</label>
+                        <input type="number" class="form-control" id="updated_id" name="updated_id">
+                      </div>
+                    <div class="form-group">
+                        <label>Course Id</label>
+                        <input type="text" class="form-control" required="" id="course_id">
+                      </div>
+                  <div class="form-group">
+                    <label>University Id</label>
+                    <input type="text" class="form-control" required="" id="uni_id">
+                  </div>
+                  <div class="form-group">
+                    <label>Upload Lecture Image</label>
+                    <input type="file" class="form-control" required="" id="upload_lec_img">
+                  </div>
+                  <div class="form-group">
+                    <label>Lecture Id</label>
+                    <input type="text" class="form-control" required="" id="lec_id">
+                  </div>
+                  <div class="form-group">
+                    <label>Upload Lecture Documents</label>
+                    <input type="file" class="form-control" required="" id="upload_doc">
+                  </div>
+                  <div class="form-group">
+                    <label>Lecture Title</label>
+                    <input type="text" class="form-control" required="" id="lec_title">
+                  </div>
+                  <div class="form-group">
+                    <label>Lecture Description</label>
+                    <input type="text" class="form-control" required="" id="lec_desc">
+                  </div>
+
+                    <button type="submit" class="btn btn-primary m-t-15 waves-effect" value="Submit" id="editbtn" name="editbtn" >Update</button>
+                  </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <!-- DELETE MODAL  -->
+            <div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+
+                          <form>
+
+                              <div class="modal-body">
+
+                                  <input type="hidden" name="delete_id" id="delete_id">
+
+                                  <h4> Do you want to Delete this Data?</h4>
+                              </div>
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal"> NO </button>
+                                  <button type="submit" name="deletedata" id ="deletedata" class="btn btn-primary"> Yes </button>
+                              </div>
+                          </form>
+
+                      </div>
+                  </div>
+              </div>
+        
+          
+        </div>
+            </div>
         </div>
       </div>
     </section>
@@ -174,5 +254,49 @@
 </body>
 
 
-<!-- forms-validation.html  21 Nov 2019 03:55:16 GMT -->
+<script>
+        $(document).ready(function () {
+
+            $('.editbtn').on('click', function () {
+
+                $('#editmodal').modal('show');
+
+                // $tr = $(this).closest('tr');
+
+                // var data = $tr.children("td").map(function () {
+                //     return $(this).text();
+                // }).get();
+
+                // console.log(data);
+                // $('#updated_id').val(data[0]);
+                // $('#course_id').val(data[1]);
+                // $('#uni_id').val(data[2]);
+                // $('#upload_lec_img').val(data[3]);
+                // $('#lec_id').val(data[4]);
+                // $('#upload_doc').val(data[5]);
+                // $('#lec_title').val(data[6]);
+                // $('#lec_desc').val(data[7]);
+            });
+        });
+    </script>
+ <script>
+        $(document).ready(function () {
+
+            $('.deletebtn').on('click', function () {
+
+                $('#deletemodal').modal('show');
+
+                $tr = $(this).closest('tr');
+
+                var data = $tr.children("td").map(function () {
+                    return $(this).text();
+                }).get();
+
+                console.log(data);
+
+                $('#delete_id').val(data[0]);
+
+            });
+        });
+    </script>
 </html>

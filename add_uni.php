@@ -39,19 +39,112 @@
   <link rel="stylesheet" href="assets/css/custom.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
 </head>
 
 <body>
-  <div class="loader"></div>
+
   <?php include 'header.php';?>
-      </div>
-       <!-- Main Content -->
-       <!-- CREATE TABLE `university` (
-  `UniversityID` int(11) NOT NULL,
-  `Universityname` varchar(255) DEFAULT NULL,
-  `id` int(255) NOT NULL -->
+   <!-- Main Content -->
        <div class="main-content">
-        <section class="section">
+       
+              <!-- Modal - ADD UNIVERSITY-->
+
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="formModal"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="formModal">Add University</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+
+                      <form action="insert_uni.php" autocomplete="off" method="POST">
+                        <div class="form-group">
+                          <label>Univeristy Id</label>
+                          <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Enter University Id" id="uni_id" name="uni_id">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label>Name</label>
+                          <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Enter Univerity Name" id="uni_name" name="uni_name">
+                          </div>
+                        </div>
+                      
+                        <button type="submit" class="btn btn-primary m-t-15 waves-effect" value="Submit" id="addButton" name="addButton">Submit</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+                  <!-- Modal - EDIT UNIVERSITY-->
+
+              <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="formModal"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="formModal">Edit University</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+
+                      <form action="update_uni.php" autocomplete="off" method="POST">
+                      <input type="hidden" name="update_id" id="update_id">
+                        <div class="form-group">
+                          <label>Univeristy Id</label>
+                          <input type="text" class="form-control" placeholder="Enter University Id" id="uni_id" name="uni_id">
+                        </div>
+                        <div class="form-group">
+                          <label>Name</label>
+                            <input type="text" class="form-control" placeholder="Enter Univerity Name" id="uni_name" name="uni_name" >
+                        </div>
+                        <button type="submit" class="btn btn-primary m-t-15 waves-effect" value="Submit" id="editbtn" name="editbtn">Save</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+             
+              <!-- DELETE POP UP FORM (Bootstrap MODAL) -->
+              <div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+
+                          <form action="del_uni.php" method="POST">
+
+                              <div class="modal-body">
+
+                                  <input type="hidden" name="delete_id" id="delete_id">
+
+                                  <h4> Do you want to Delete this Data?</h4>
+                              </div>
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal"> NO </button>
+                                  <button type="submit" name="deletedata" class="btn btn-primary"> Yes </button>
+                              </div>
+                          </form>
+
+                      </div>
+                  </div>
+              </div>
+           
+          <section class="section">
           <div class="section-body">
             <div class="row">
               
@@ -65,230 +158,63 @@
                 <div class="card-header" style="text-align: center;">
                   <h4 style="text-align: center;">University</h4>
                 </div>
-                <table class="table table-striped">
+
+                <?php
+                $connection = mysqli_connect("localhost","root","");
+                $db = mysqli_select_db($connection, 'hwhelp');
+
+                $query = "SELECT * FROM university";
+                $query_run = mysqli_query($connection, $query);
+            ?>
+
+                <table class="table table-striped" id="uni_tbl">
                   <thead>
                     <tr>
-                      <th scope="col">#</th>
+                      <!-- <th scope="col">#</th> -->
                       <th scope="col">Id</th>
                       <th scope="col">University Id</th>
                       <th scope="col">University Name</th>
                       <th scope="col">Edit</th>
-                      
+                      <th scope="col">Delete</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>pP9o1fwMFz</td>
-                      <td>22</td>
-                      <td>Qatar University</td>
-                      <td> <button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
-                        <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>MatYlPHC77</td>
-                      <td>33</td>
-                      <td>Harvard University</td>
-                      <td> <button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
-                        <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Nud0XGnTIW</td>
-                      <td>44</td>
-                      <td>Stanford University</td>
-                      <td> <button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
-                        <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
-                    </tr>
-                  </tbody>
+
+                  <?php
+                if($query_run)
+                {
+                    foreach($query_run as $row)
+                    {
+                      ?>
+                    <tbody>
+                            <tr>
+                                
+                                <td> <?php echo $row['id']; ?> </td>
+                                <td> <?php echo $row['UniversityID']; ?> </td>
+                                <td> <?php echo $row['Universityname']; ?> </td>
+                                <td>
+                                    <button type="button" class="btn btn-success editbtn"> <i class="fa fa-edit"></i> </button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger deletebtn"> <i class="fa fa-trash"></i> </button>
+                                </td>
+                            </tr>
+                        </tbody>
+
+            <?php           
+                    }
+                }
+                else 
+                {
+                    echo "No Record Found";
+                }
+            ?>
+                  
                 </table>
               </div>
             </div>
                 </div>
               </section>
 
-              <!-- Modal with form -->
-
-              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="formModal"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="formModal">Add University</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <form class="">
-                        <div class="form-group">
-                          <label>Id</label>
-                          <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Enter the Id" name="email">
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label>Univeristy Id</label>
-                          <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Enter University Id" name="email">
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label>Name</label>
-                          <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Enter Univerity Name" name="name">
-                          </div>
-                        </div>
-                      
-                        <button type="button" class="btn btn-primary m-t-15 waves-effect">Add</button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Vertically Center -->
-             
-              <!-- Large modal -->
-         
-              <!-- Small Modal -->
-              
-              <div class="settingSidebar">
-                <a href="javascript:void(0)" class="settingPanelToggle"> <i class="fa fa-spin fa-cog"></i>
-                </a>
-                <div class="settingSidebar-body ps-container ps-theme-default">
-                  <div class=" fade show active">
-                    <div class="setting-panel-header">Setting Panel
-                    </div>
-                    <div class="p-15 border-bottom">
-                      <h6 class="font-medium m-b-10">Select Layout</h6>
-                      <div class="selectgroup layout-color w-50">
-                        <label class="selectgroup-item">
-                          <input type="radio" name="value" value="1" class="selectgroup-input-radio select-layout" checked>
-                          <span class="selectgroup-button">Light</span>
-                        </label>
-                        <label class="selectgroup-item">
-                          <input type="radio" name="value" value="2" class="selectgroup-input-radio select-layout">
-                          <span class="selectgroup-button">Dark</span>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="p-15 border-bottom">
-                      <h6 class="font-medium m-b-10">Sidebar Color</h6>
-                      <div class="selectgroup selectgroup-pills sidebar-color">
-                        <label class="selectgroup-item">
-                          <input type="radio" name="icon-input" value="1" class="selectgroup-input select-sidebar">
-                          <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip"
-                            data-original-title="Light Sidebar"><i class="fas fa-sun"></i></span>
-                        </label>
-                        <label class="selectgroup-item">
-                          <input type="radio" name="icon-input" value="2" class="selectgroup-input select-sidebar" checked>
-                          <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip"
-                            data-original-title="Dark Sidebar"><i class="fas fa-moon"></i></span>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="p-15 border-bottom">
-                      <h6 class="font-medium m-b-10">Color Theme</h6>
-                      <div class="theme-setting-options">
-                        <ul class="choose-theme list-unstyled mb-0">
-                          <li title="white" class="active">
-                            <div class="white"></div>
-                          </li>
-                          <li title="cyan">
-                            <div class="cyan"></div>
-                          </li>
-                          <li title="black">
-                            <div class="black"></div>
-                          </li>
-                          <li title="purple">
-                            <div class="purple"></div>
-                          </li>
-                          <li title="orange">
-                            <div class="orange"></div>
-                          </li>
-                          <li title="green">
-                            <div class="green"></div>
-                          </li>
-                          <li title="red">
-                            <div class="red"></div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="p-15 border-bottom">
-                      <div class="theme-setting-options">
-                        <label class="m-b-0">
-                          <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
-                            id="mini_sidebar_setting">
-                          <span class="custom-switch-indicator"></span>
-                          <span class="control-label p-l-10">Mini Sidebar</span>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="p-15 border-bottom">
-                      <div class="theme-setting-options">
-                        <label class="m-b-0">
-                          <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
-                            id="sticky_header_setting">
-                          <span class="custom-switch-indicator"></span>
-                          <span class="control-label p-l-10">Sticky Header</span>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="mt-4 mb-4 p-3 align-center rt-sidebar-last-ele">
-                      <a href="#" class="btn btn-icon icon-left btn-primary btn-restore-theme">
-                        <i class="fas fa-undo"></i> Restore Default
-                      </a>
-                    </div>
-                  </div>
-            
-
-
-
-
-
-
-
-            <!-- <div class="row">
-              <div class="col-12 col-md-10 col-lg-12">
-                <div class="card">
-                  <form>
-                    <div class="card-header">
-                      <h4>Add University</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label>Id</label>
-                            <input type="number" class="form-control">
-                          </div>
-                        <div class="form-group">
-                            <label>University Id</label>
-                            <input type="text" class="form-control" required="">
-                          </div>
-                      <div class="form-group">
-                        <label>University Name</label>
-                        <input type="text" class="form-control" required="">
-                      </div> -->
-                      
-                      
-                      <!-- 
-                      <div class="form-group mb-0">
-                        <label>Message</label>
-                        <textarea class="form-control" required=""></textarea>
-                      </div> -->
-                    <!-- </div> -->
-                    <!-- <div class="card-footer text-right">
-                      <button class="btn btn-primary">Add</button>
-                    </div>
-                  </form> -->
-                </div>
-               
-              </div>
-              
-            </div>
-          </div>
-        </section>
        
       </div>
       <footer class="main-footer">
@@ -303,14 +229,75 @@
   </div>
   <!-- General JS Scripts -->
   <script src="assets/js/app.min.js"></script>
+
+  <!-- <script src="assets/js/page/admin_js_files/add_uni.js"></script> -->
   <!-- JS Libraies -->
   <!-- Page Specific JS File -->
   <!-- Template JS File -->
   <script src="assets/js/scripts.js"></script>
   <!-- Custom JS File -->
+
   <script src="assets/js/custom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+          $('.editbtn').on('click', function () {
+            var $tr = $(this).closest('tr');
+            var data = $tr.find("td").map(function () {
+            return $(this).text();
+          }).get();
+
+          console.log(data);
+
+          $('#update_id').val(data[0]);
+          $('#uni_id').val(data[1]);
+          $('#uni_name').val(data[2]);
+
+          console.log($('#uni_id').val());
+
+          $('#editmodal').modal('show');
+
+          console.log($('#uni_id').val());
+        });
+        });
+    </script>
+ <script>
+        $(document).ready(function () {
+
+            $('.deletebtn').on('click', function () {
+
+                $('#deletemodal').modal('show');
+
+                $tr = $(this).closest('tr');
+
+                var data = $tr.children("td").map(function () {
+                    return $(this).text();
+                }).get();
+
+                console.log(data);
+
+                $('#delete_id').val(data[0]);
+
+            });
+        });
+    </script>
 </body>
 
 
 <!-- forms-validation.html  21 Nov 2019 03:55:16 GMT -->
 </html>
+
+

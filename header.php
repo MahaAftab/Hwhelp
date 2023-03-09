@@ -51,7 +51,7 @@
           <ul class="sidebar-menu">
             <li class="menu-header"></li>
             <li class="dropdown">
-              <a href="index.php" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+              <a href="index.php" class="nav-link active"><i data-feather="monitor"></i><span>Dashboard</span></a>
             </li>
             <li><a class="nav-link" href="add_uni.php"><i class="fa fa-university small"></i><span>Add University</span></a></li>
             <li><a class="nav-link" href="add_course.php"><i data-feather="folder"></i><span>Add Courses</span></a></li>
@@ -62,7 +62,7 @@
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="add_hw.php">
                   <i data-feather="book-open"></i>Add Homework</a></li>
-                <li class="active"><a class="nav-link" href="Add_lectures.php"><i data-feather="file-minus"></i></i>Add Lectures</a></li>
+                <li class=""><a class="nav-link" href="Add_lectures.php"><i data-feather="file-minus"></i></i>Add Lectures</a></li>
                 <li><a class="nav-link" href="add_video.php"><i data-feather="video"></i>Add Videos</a></li>
                 <li><a class="nav-link" href="add_quiz.php"><i data-feather="book"></i>Add Quiz</a></li>
                 <li><a class="nav-link" href="add_past_paper.php"><i data-feather="clipboard"></i>Add Past Exam papers</a></li>

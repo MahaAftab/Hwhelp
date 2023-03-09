@@ -23,13 +23,6 @@
           
       </div>
       <!-- MAIN CONTENT -->
-      <!-- CREATE TABLE `courses` (
-  `courseid` int(255) NOT NULL,
-  `UniversityID` int(255) NOT NULL,
-  `coursename` varchar(555) NOT NULL,
-  `universityname` varchar(255) DEFAULT NULL,
-  `id` varchar(255) NOT NULL,
-  `HomeworkId` varchar(255) NOT NULL -->
 
 
   <div class="main-content">
@@ -69,20 +62,10 @@
                   <td>UFCFP4-30-1 - Computer Crime and Digital Evidence</td>
                   <td>Qatar University</td>
                   <td>01</td>
-                  <td> <button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
-                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
+                  <td> <button type="button" class="btn btn-success" data-toggle="modal"   data-target="#editmodal"><i class="fa fa-edit"></i></button>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletemodal"><i class="fa fa-trash"></i></button></td>
                 </tr>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Pi5o1fwMFz</td>
-                  <td>23</td>
-                  <td>33</td>
-                  <td>Electric Circuits - ELEC 201 </td>
-                  <td>Harvard University</td>
-                  <td>02</td>
-                  <td> <button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
-                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
-                </tr>
+                
                 
               </tbody>
             </table>
@@ -107,31 +90,27 @@
                   <div class="card-body">
                     <div class="form-group">
                         <label>Id</label>
-                        <input type="number" class="form-control" required="">
+                        <input type="number" class="form-control" id="id">
                       </div>
                     <div class="form-group">
                         <label>Course Id</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" id="course_id">
                       </div>
                   <div class="form-group">
                     <label>University Id</label>
-                    <input type="text" class="form-control" required="">
+                    <input type="text" class="form-control" required="" id="uni_id">
                   </div> 
-                  <!-- <div class="form-group">
-                    <label>Upload Image</label>
-                    <input type="image" class="form-control" required="">
-                  </div> -->
                    <div class="form-group">
                     <label>Course Name</label>
-                    <input type="text" class="form-control" required="">
+                    <input type="text" class="form-control" required="" id="course_name">
                   </div>
                   <div class="form-group">
                     <label>University Name</label>
-                    <input type="text" class="form-control" required="">
+                    <input type="text" class="form-control" required="" id="uni_name">
                   </div>
                   <div class="form-group">
                     <label>Homework Id</label>
-                    <input type="text" class="form-control" required="">
+                    <input type="text" class="form-control" required="" id="hw_id">
                   </div>
 
                 </div>
@@ -141,11 +120,88 @@
               </div>
             </div>
           </div>
+        </div>
 
-          
+          <!-- Modal - EDIT COURSE-->
+
+          <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="formModal"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="formModal">Edit Past Papers</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                    <form >
+                    <div class="form-group">
+                        <label>Id</label>
+                        <input type="number" class="form-control" id="updated_id">
+                      </div>
+                    <div class="form-group">
+                        <label>Course Id</label>
+                        <input type="text" class="form-control" id="course_id">
+                      </div>
+                  <div class="form-group">
+                    <label>University Id</label>
+                    <input type="text" class="form-control" required="" id="uni_id">
+                  </div> 
+                   <div class="form-group">
+                    <label>Course Name</label>
+                    <input type="text" class="form-control" required="" id="course_name">
+                  </div>
+                  <div class="form-group">
+                    <label>University Name</label>
+                    <input type="text" class="form-control" required="" id="uni_name">
+                  </div>
+                  <div class="form-group">
+                    <label>Homework Id</label>
+                    <input type="text" class="form-control" required="" id="hw_id">
+                  </div>
+             
+                    </div>
+                   
+                <button type="submit" class="btn btn-primary m-t-15 waves-effect" value="Submit" id="editbtn" name="editbtn" >Update</button>
+              </div>
+
+                  </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <!-- DELETE MODAL  -->
+            <div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+
+                          <form>
+
+                              <div class="modal-body">
+
+                                  <input type="hidden" name="delete_id" id="delete_id">
+
+                                  <h4> Do you want to Delete this Data?</h4>
+                              </div>
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal"> NO </button>
+                                  <button type="submit" name="deletedata" id ="deletedata" class="btn btn-primary"> Yes </button>
+                              </div>
+                          </form>
+
+                      </div>
+                  </div>
+              </div>
         
           
-        </div>
       </div>
     </section>
 
@@ -173,5 +229,35 @@
 </body>
 
 
-<!-- forms-validation.html  21 Nov 2019 03:55:16 GMT -->
+
+<script>
+        $(document).ready(function () {
+
+            $('.editbtn').on('click', function () {
+
+                $('#editmodal').modal('show');
+
+            });
+        });
+    </script>
+ <script>
+        $(document).ready(function () {
+
+            $('.deletebtn').on('click', function () {
+
+                $('#deletemodal').modal('show');
+
+                $tr = $(this).closest('tr');
+
+                var data = $tr.children("td").map(function () {
+                    return $(this).text();
+                }).get();
+
+                console.log(data);
+
+                $('#delete_id').val(data[0]);
+
+            });
+        });
+    </script>
 </html>
